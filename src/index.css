@@ -1,0 +1,64 @@
+:root {
+  --bg-color: #ffffff;
+  --text-main: #000000;
+  --text-muted: #666666;
+  --dark-bg: #0A0A0A;
+  --dark-card: #141414;
+  --dark-border: #2A2A2A;
+  --dark-text: #ffffff;
+  --dark-text-muted: #A0A0A0;
+  --primary: #ffffff;
+  --border-radius-lg: 32px;
+  --border-radius-md: 16px;
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
