@@ -1,9 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
 import { 
-  ArrowRight, Play, CheckCircle2, Star, ChevronRight, 
-  Shield, Zap, Cpu, Globe, Activity, Database, Network
+  CheckCircle2, Star, ChevronRight
 } from 'lucide-react';
 import './App.css';
+
+// Components
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Features from './components/Features';
+import LiveNodes from './components/LiveNodes';
+import Footer from './components/Footer';
 
 function App() {
   const [isAnnual, setIsAnnual] = useState(false);
@@ -31,97 +37,9 @@ function App() {
   return (
     <div className="app-container">
       
-      {/* NAVBAR */}
-      <nav className="navbar container">
-        <div className="nav-logo">
-          <div className="logo-icon"></div>
-          <span className="logo-text">USANJ_AI</span>
-        </div>
-        
-        <div className="nav-pill desktop-only">
-          <a href="#home" className="active">Home</a>
-          <a href="#infrastructure">Infrastructure</a>
-          <a href="#mapping">Mapping</a>
-          <a href="#deployments">Deployments</a>
-          <a href="#echoes">Echoes</a>
-        </div>
-        
-        <div className="nav-actions">
-          <a href="#login" className="login-link desktop-only">Log In</a>
-          <button className="btn btn-primary">Sign up</button>
-        </div>
-      </nav>
+      <Navbar />
 
-      {/* HERO SECTION */}
-      <section className="hero-section container" id="home">
-        <div className="hero-rating reveal reveal-delay-1">
-          <span className="stars">★★★★★</span>
-          <span className="rating-text">4.9 on global ratings (2M reviews)</span>
-        </div>
-        
-        <h1 className="hero-title reveal reveal-delay-2">
-          Take Control of Your<br/>Reality with USANJ
-        </h1>
-        
-        <p className="hero-subtitle reveal reveal-delay-3">
-          Neural management involves planning, organizing, and controlling computational<br/>
-          resources to achieve absolute cognitive goals.
-        </p>
-        
-        <div className="hero-cta reveal reveal-delay-4">
-          <button className="btn btn-primary btn-lg">Get Started</button>
-          <button className="btn btn-secondary btn-lg">Get a Demo</button>
-        </div>
-
-        {/* Hero Dashboard Mockup */}
-        <div className="hero-dashboard-wrapper reveal reveal-delay-5">
-          <div className="dashboard-mockup">
-             <div className="mockup-header">
-               <div className="m-logo">Good morning, Commander</div>
-               <div className="m-actions">
-                 <div className="m-icon"></div>
-                 <div className="m-btn">Generate Report</div>
-               </div>
-             </div>
-             
-             <div className="mockup-body">
-               <div className="m-col">
-                 <div className="m-label">Neural Balance</div>
-                 <div className="m-value">4.2 PB/s</div>
-                 <div className="m-chart"></div>
-               </div>
-               <div className="m-col m-center">
-                 <div className="m-label">Cognitive Overview</div>
-                 <div className="m-value">100% Synced</div>
-                 <div className="m-bars">
-                   <div className="bar b1"></div>
-                   <div className="bar b2"></div>
-                   <div className="bar b3"></div>
-                   <div className="bar b4"></div>
-                   <div className="bar b5"></div>
-                 </div>
-               </div>
-               <div className="m-col">
-                 <div className="m-top-row">
-                   <span>Active Nodes</span>
-                   <span className="view-all">View All</span>
-                 </div>
-                 <div className="m-avatars">
-                   <div className="m-avi"></div>
-                   <div className="m-avi"></div>
-                   <div className="m-avi"></div>
-                   <div className="m-avi"></div>
-                 </div>
-                 <div className="m-btn-group">
-                   <button className="m-btn-dark">Request Link</button>
-                   <button className="m-btn-dark">Send Packet</button>
-                 </div>
-               </div>
-             </div>
-          </div>
-          <div className="glow-effect"></div>
-        </div>
-      </section>
+      <Hero />
 
       {/* CLIENTS LOGOS */}
       <section className="clients-section container reveal">
@@ -139,51 +57,9 @@ function App() {
         <p className="clients-join">Join 40,000+ networks globally</p>
       </section>
 
-      {/* FEATURES GRID */}
-      <section className="features-grid-section container" id="infrastructure">
-        <div className="badge reveal">✦ Infrastructure</div>
-        <h2 className="section-title reveal">
-          Intelligence Reimagined<br/>for the Future You
-        </h2>
-        <p className="section-subtitle reveal">
-          Trust us to deliver cutting-edge innovation, transparency, and localized<br/>
-          service, all designed to help you achieve cognitive freedom.
-        </p>
+      <Features />
 
-        <div className="feature-cards">
-          <div className="f-card reveal">
-            <div className="f-icon-box"><Zap size={24} /></div>
-            <h4>Instant Node Setup</h4>
-            <p>Customers can set up a neural node account in minutes.</p>
-          </div>
-          <div className="f-card reveal reveal-delay-1">
-            <div className="f-icon-box"><Activity size={24} /></div>
-            <h4>Real-Time Processing</h4>
-            <p>Enables instant data transfers, both domestically and dimensionally.</p>
-          </div>
-          <div className="f-card reveal reveal-delay-2">
-            <div className="f-icon-box"><Cpu size={24} /></div>
-            <h4>Mobile Intelligence</h4>
-            <p>Full-featured mobile app that allows users to manage their networks.</p>
-          </div>
-          
-          <div className="f-card reveal">
-            <div className="f-icon-box"><Shield size={24} /></div>
-            <h4>Automated Security</h4>
-            <p>Round up inputs or set regular automated defenses into a secure ledger.</p>
-          </div>
-          <div className="f-card reveal reveal-delay-1">
-            <div className="f-icon-box"><Database size={24} /></div>
-            <h4>AI-Powered Metrics</h4>
-            <p>AI tools analyze processing patterns and provide personalized insights.</p>
-          </div>
-          <div className="f-card reveal reveal-delay-2">
-            <div className="f-icon-box"><Network size={24} /></div>
-            <h4>Virtual API Tokens</h4>
-            <p>Generate virtual access tokens instantly for secure networking.</p>
-          </div>
-        </div>
-      </section>
+      <LiveNodes />
 
       {/* HIGHLIGHT 1: Cognitive Mapping */}
       <section className="highlight-section container" id="mapping">
@@ -339,48 +215,7 @@ function App() {
         </div>
       </section>
 
-      {/* ACTUAL GLOBAL FOOTER AS REQUESTED */}
-      <footer className="global-footer reveal">
-        <div className="container">
-          <div className="gf-top">
-            <div className="gf-brand">
-              <div className="logo-icon lg-icon"></div>
-              <h2>USANJ_AI</h2>
-              <p>Forging the neural pathway for tomorrow's digital reality.</p>
-            </div>
-            
-            <div className="gf-links-grid">
-              <div className="gf-col">
-                <h4>Ecosystem</h4>
-                <a href="#infrastructure">Neural Mapping</a>
-                <a href="#mapping">Data Synthesis</a>
-                <a href="#home">Architecture</a>
-              </div>
-              <div className="gf-col">
-                <h4>Company</h4>
-                <a href="#home">About IntelHub</a>
-                <a href="#deployments">Careers</a>
-                <a href="#echoes">Press</a>
-              </div>
-              <div className="gf-col">
-                <h4>Resources</h4>
-                <a href="#deployments">API Documentation</a>
-                <a href="#infrastructure">Network Status</a>
-                <a href="#home">Support Hub</a>
-              </div>
-            </div>
-          </div>
-          
-          <div className="gf-bottom">
-             <div className="gf-copyright">© 2026 USANJ Systems. All directives localized and protected.</div>
-             <div className="gf-socials">
-                <span>[ T ]</span>
-                <span>[ L ]</span>
-                <span>[ G ]</span>
-             </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
     </div>
   );
